@@ -2,8 +2,8 @@ public class GameController
 {
    // instance variables (properties) ********************
 
-   private boolean myGameRunning;
-   private int myPlayerTurn;   
+   private boolean myGameRunning = true;     // true if game is running, false otherwise
+   private int myPlayerTurn;                 // ID # of player who has next turn
 
    // default constructor *******************************
 
@@ -15,6 +15,8 @@ public class GameController
 
    // accessor methods ************************************
    
+   // accessor method for myGameRunning
+   // also is predicate method that returns true or false 
    public boolean isGameRunning()
    {
        return myGameRunning;
@@ -39,6 +41,7 @@ public class GameController
 
    // interesting methods *******************************
 
+   // postcondition: updates game for next player to take a turn (i.e. to act)
    public void togglePlayerTurn()
    {
    

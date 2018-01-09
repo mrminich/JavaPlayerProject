@@ -3,6 +3,8 @@
 public class Parser
 {
 
+   // interesting methods *******************************
+
 	/**
 	 * Search for one word in phrase. The search is not case
 	 * sensitive. This method will check that the given goal
@@ -21,18 +23,17 @@ public class Parser
 	 */
 	public static int findKeyword(String statement, String goal, int startPos)
 	{
-      String phrase = statement.trim().toLowerCase(); // phrase = "i want to earn a good grade in java"
-		goal = goal.toLowerCase(); // i want to
+      String phrase = statement.trim().toLowerCase();
+		goal = goal.toLowerCase(); 
 
-		// The only change to incorporate the startPos is in the line below
-		int position = phrase.indexOf(goal, startPos); // 0
+		int position = phrase.indexOf(goal, startPos); 
 
-		// Refinement--make sure the goal isn't part of a word
+		// make sure the goal isn't part of a word
 		while (position >= 0)
 		{
 			// Find the string of length 1 before and after the word
 			String before = " ";
-            String after = " ";
+         String after = " ";
 			
          if (position > 0)
 			{
@@ -48,14 +49,14 @@ public class Parser
 			if (((before.compareTo("a") < 0) || (before.compareTo("z") > 0))
 					&& ((after.compareTo("a") < 0) || (after.compareTo("z") > 0)))
 			{
-				return position;
+				return position;     // found goal
 			}
 
 			// The last position didn't work, so let's find the next, if there is one.
 			position = phrase.indexOf(goal, position + 1);
 		}
 
-		return -1;
+		return -1;                 // did not find goal
 	}
 	
 	/**

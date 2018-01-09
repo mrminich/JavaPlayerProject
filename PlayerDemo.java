@@ -1,6 +1,6 @@
 /**
  * Player Project
- * @author John Doe Per 2
+ * @author John Doe Per 3
  */
 
 // CLIENT CLASS ***********************************************
@@ -29,9 +29,9 @@ public class PlayerDemo
         
         while (game.isGameRunning() == true)
         {
-            Player nextUp = null;
+            Player nextUp = null;                        // player who takes the next turn (i.e. act)
             
-            if (game.getPlayerTurn() == 1)
+            if (game.getPlayerTurn() == 1)               // player #1's turn (act)
             {  
                nextUp = humanPlayer;
                System.out.print("\nHuman player #" + game.getPlayerTurn() + ". Input a command (move, turn, or exit): ");
@@ -51,12 +51,12 @@ public class PlayerDemo
                } 
                              
             }
-            else if (game.getPlayerTurn() == 2)
+            else if (game.getPlayerTurn() == 2)         // player #2's turn (act)
             {
                nextUp = computerPlayer;
                int num = (int) (Math.random() * 2) + 1; // random integer 1 or 2
                
-               if (num == 1)        // computer either turns or moves forward
+               if (num == 1)        // randomly turns or moves forward
                {
                   nextUp.turn();
                }
