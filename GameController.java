@@ -2,7 +2,7 @@ public class GameController
 {
    // instance variables (properties) ********************
 
-   private boolean myGameRunning = true;     // true if game is running, false otherwise
+   private boolean myGameRunning;            // true if game is running, false otherwise
    private int myPlayerTurn;                 // ID # of player who has next turn
 
    // default constructor *******************************
@@ -56,4 +56,4 @@ public class GameController
        
    }
 
-}// end of GameState class
+}// end of GameController class

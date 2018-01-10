@@ -16,8 +16,8 @@ public class Player
     
    // class constants ************************************
    
-   public final static int MAX_STEPS = 10;     // any player dies after this # of total steps
-   public final static int MAX_ACTIONS = 3;    // any player dies after this # of total actions
+   public final static int MAX_STEPS = 100;     // any player dies after this # of total steps
+   public final static int MAX_ACTIONS = 30;    // any player dies after this # of total actions
     
    // default constructor *******************************
    // postcondition: Player object is instantiated with random direction, speed, and x position

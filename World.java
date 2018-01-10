@@ -8,8 +8,8 @@ public class World
     
    // class constants ************************************
 
-   public final static int SIZE = 51;                 // length of one-dimensional world
-   public final static int NUM_BLANK_LINES = 20;      // blank lines to clear the console
+   public final static int SIZE = 51;                // length of one-dimensional world
+   public final static int NUM_BLANK_LINES = 0;      // blank lines to clear the console
     
    // default constructor *******************************
 
@@ -43,7 +43,7 @@ public class World
             if (nextPlayer.getDirection() == 1) // if current player points east
             {
                strip[nextPlayer.getX() + SIZE/2] = ">";  // place correct marker into strip at proper place
-            }                                         //     adding 10 due to the negative portion of x axis
+            }                                            //     adding SIZE/2 due to the negative portion of x axis
             else if (nextPlayer.getDirection() == -1)        
             {
                strip[nextPlayer.getX() + SIZE/2] = "<";

@@ -16,10 +16,10 @@ public class PlayerDemo
         World world = new World();                    // the world where players live      
         GameController game = new GameController();   // the game
         
-        Player humanPlayer = new Player(1, 1, 1);        // human's player object (direction, speed, position)
+        Player humanPlayer = new Player(1, 1, 1);     // human's player object (direction, speed, position)
         world.placePlayer(humanPlayer);
         
-        Player computerPlayer = new Player(-1, 1, -2);   // computer player (direction, speed, position)
+        Player computerPlayer = new Player(-1, 1, 0);   // computer player (direction, speed, position)
         world.placePlayer(computerPlayer);
                 
         world.display();
@@ -55,17 +55,20 @@ public class PlayerDemo
             {
                nextUp = computerPlayer;
                int num = (int) (Math.random() * 2) + 1; // random integer 1 or 2
+               String computerAction = "";
                
                if (num == 1)        // randomly turns or moves forward
                {
                   nextUp.turn();
+                  computerAction = "turn";
                }
                else if (num == 2)
                {
                   nextUp.move();
+                  computerAction = "move";
                }
                
-               System.out.println("After computer player's turn.");
+               System.out.println("\n\nAfter computer player's action which was a " + computerAction);
             }         
                  
             world.display();
